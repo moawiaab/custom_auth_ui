@@ -1,3 +1,4 @@
+import 'package:custom_auth_ui/src/core/status_require.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -9,12 +10,16 @@ class CustomForm extends StatelessWidget {
     required this.child,
     this.colors,
     this.formKey,
-    this.bottom = 0
+    this.bottom = 0,
+    this.icon = Icons.format_list_bulleted,
+    required this.statusRequired,
   });
   final Widget child;
   final List<Color>? colors;
-  final GlobalKey? formKey;
+  final GlobalKey<FormState>? formKey;
   final double? bottom;
+  final IconData? icon;
+  final StatusRequired statusRequired;
 
   @override
   Widget build(BuildContext context) {
@@ -29,8 +34,8 @@ class CustomForm extends StatelessWidget {
             gradient: LinearGradient(
               colors: colors ??
                   [
-                    Colors.red.withOpacity(0.3),
-                    Colors.red.withOpacity(0.8),
+                    Colors.green.withOpacity(0.3),
+                    Colors.greenAccent.withOpacity(0.8),
                     Colors.yellow.withOpacity(0.8),
                     Colors.yellow.withOpacity(0.3)
                   ],
@@ -45,9 +50,11 @@ class CustomForm extends StatelessWidget {
           ),
           child: Container(
             margin: const EdgeInsets.only(top: 40),
-            child: const Column(children: [
+            child: Column(children: [
               CustomIcon(
+                icon: icon!,
                 iconSize: 120,
+                iconColor: Colors.green,
               )
             ]),
           ),
@@ -79,6 +86,24 @@ class CustomForm extends StatelessWidget {
             ),
           ),
         ),
+        statusRequired == StatusRequired.loading
+            ? Positioned(
+                top: Get.height / 4.5,
+                left: 0,
+                right: 0,
+                bottom: bottom,
+                child: Container(
+                  margin: const EdgeInsets.all(20),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.black.withOpacity(0.3)),
+                  child: const Center(
+                      child: Image(
+                    image: AssetImage("assets/img/loading.gif"),
+                  )),
+                ),
+              )
+            : Container()
       ],
     );
   }

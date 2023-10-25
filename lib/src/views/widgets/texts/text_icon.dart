@@ -1,5 +1,6 @@
-import 'package:api_auth/src/views/widgets/texts/big_text.dart';
 import 'package:flutter/material.dart';
+
+import 'big_text.dart';
 
 class TextWithIcon extends StatelessWidget {
   const TextWithIcon({

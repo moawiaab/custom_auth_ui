@@ -9,7 +9,7 @@ class CustomTextInput extends StatelessWidget {
       this.suffixIcon,
       this.controller,
       this.autofocus = false,
-      this.validator,
+      this.valid,
       this.onChanged,
       this.enabled = true,
       this.iconColor = Colors.grey,
@@ -21,7 +21,7 @@ class CustomTextInput extends StatelessWidget {
   final IconData? suffixIcon;
   final TextEditingController? controller;
   final bool? autofocus;
-  final String? Function(String?)? validator;
+  final String? Function(String?)? valid;
   final void Function(String)? onChanged;
   final bool? enabled;
   final Color? iconColor;
@@ -49,7 +49,7 @@ class CustomTextInput extends StatelessWidget {
         keyboardType: keyboardType,
         controller: controller,
         autofocus: autofocus!,
-        validator: validator,
+        validator: valid,
         onChanged: onChanged,
         enabled: enabled,
         obscureText: password!,

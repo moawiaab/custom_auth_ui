@@ -1,4 +1,4 @@
-
+import 'package:custom_auth_ui/src/core/functions/vaild_input.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -23,8 +23,10 @@ class LoginPage extends StatelessWidget {
         backgroundColor: const Color(0xfff1f1f1),
         body: GetBuilder<LoginController>(builder: (controller) {
           return CustomForm(
+            statusRequired: controller.statusRequired,
+            icon: Icons.lock_outline,
             formKey: controller.formKey,
-            bottom: 50,
+            bottom: 30,
             child: Column(
               children: [
                 const SizedBox(height: 60),
@@ -32,6 +34,7 @@ class LoginPage extends StatelessWidget {
                   hintText: "email",
                   icon: Icons.email_outlined,
                   controller: controller.emailController,
+                  valid: (val) => validInput(val!, isEmail: true),
                 ),
                 CustomTextInput(
                   hintText: "password",
@@ -42,14 +45,20 @@ class LoginPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
                 CustomLoginText(
-                    text: "forget password", text2: "go to change", onTap: () {}),
+                    text: "forget password",
+                    text2: "go to change",
+                    onTap: () {}),
                 CustomButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    controller.login();
+                  },
                   icon: Icons.login,
                   text: "login",
                 ),
                 CustomLoginText(
-                    text: "forget password", text2: "go to change", onTap: () {})
+                    text: "forget password",
+                    text2: "go to change",
+                    onTap: () {})
               ],
             ),
           );
