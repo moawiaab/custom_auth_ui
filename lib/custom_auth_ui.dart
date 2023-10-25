@@ -1,7 +1,4 @@
 library custom_auth_ui;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export 'src/views/screen/login.dart';
+export 'src/custom_icon.dart';
