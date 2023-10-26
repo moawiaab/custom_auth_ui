@@ -10,4 +10,9 @@ For general information about developing packages, see the Dart guide for
 and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages).
 -->
+<<<<<<< HEAD
 The authentication UI for the Flutter package communicates with Laravel's full authentication
+=======
+
+The authentication UI for the Flutter package communicates with Laravel's full authentication
+>>>>>>> 3428a9d (edit readme)
