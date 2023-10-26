@@ -2,7 +2,7 @@ import 'package:custom_auth_ui/src/core/status_require.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../custom_icon.dart';
+import '../../../custom_input_and_icon.dart';
 
 class CustomForm extends StatelessWidget {
   const CustomForm({
@@ -12,7 +12,7 @@ class CustomForm extends StatelessWidget {
     this.formKey,
     this.bottom = 0,
     this.icon = Icons.format_list_bulleted,
-    required this.statusRequired,
+    required this.statusRequired, required this.title,
   });
   final Widget child;
   final List<Color>? colors;
@@ -20,6 +20,7 @@ class CustomForm extends StatelessWidget {
   final double? bottom;
   final IconData? icon;
   final StatusRequired statusRequired;
+  final String title;
 
   @override
   Widget build(BuildContext context) {
@@ -55,6 +56,7 @@ class CustomForm extends StatelessWidget {
                 icon: icon!,
                 iconSize: 120,
                 iconColor: Colors.green,
+                text: title,
               )
             ]),
           ),
@@ -99,7 +101,7 @@ class CustomForm extends StatelessWidget {
                       color: Colors.black.withOpacity(0.3)),
                   child: const Center(
                       child: Image(
-                    image: AssetImage("assets/img/loading.gif"),
+                    image: AssetImage("assets/images/loading.gif"),
                   )),
                 ),
               )

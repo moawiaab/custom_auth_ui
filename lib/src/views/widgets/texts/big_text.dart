@@ -7,13 +7,14 @@ class BigText extends StatelessWidget {
     this.size = 20,
     this.fontWeight = false,
     this.textColor = Colors.black87,
-    this.maxLine = true,
+    this.maxLine = true, this.align,
   });
   final String text;
   final double? size;
   final bool? fontWeight;
   final Color? textColor;
   final bool? maxLine;
+  final TextAlign? align;
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +23,7 @@ class BigText extends StatelessWidget {
       margin: const EdgeInsets.all(5),
       child: Text(
         text,
+        textAlign: align,
         maxLines: maxLine! ? 1 : null,
         overflow: maxLine! ? TextOverflow.ellipsis : TextOverflow.clip,
         style: TextStyle(

@@ -26,4 +26,12 @@ validInput(
   if (isDateTime && !GetUtils.isDateTime(val)) {
     return "entry date time only";
   }
+
+  if (min != 0 && val.length < min) {
+    return "min is true";
+  }
+
+  if (max != 0 && val.length > max) {
+    return "min is true";
+  }
 }

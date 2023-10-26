@@ -8,7 +8,7 @@ class CustomIcon extends StatelessWidget {
     this.textSize,
     this.iconColor =  Colors.black54,
     this.textColor,
-    this.icon = Icons.format_list_bulleted
+    this.icon = Icons.format_list_bulleted, required this.text
   });
   final IconData? icon;
   final Color? bColor;
@@ -16,6 +16,7 @@ class CustomIcon extends StatelessWidget {
   final double? textSize;
   final Color? iconColor;
   final Color? textColor;
+  final String text;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +26,7 @@ class CustomIcon extends StatelessWidget {
         children: [
           Icon(icon, size: iconSize, color: iconColor),
           Text(
-            "login page",
+            text,
             style: TextStyle(
                 fontSize: textSize ?? iconSize! / 4,
                 fontWeight: FontWeight.bold, color: textColor ?? iconColor),
