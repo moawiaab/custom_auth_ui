@@ -1,3 +1,4 @@
+import 'package:custom_auth_ui/src/core/dimension.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextInput extends StatelessWidget {
@@ -31,16 +32,16 @@ class CustomTextInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 15),
-      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+      margin:  EdgeInsets.symmetric(vertical: Dimensions.fontSize24/3, horizontal: Dimensions.height15),
+      padding:  EdgeInsets.symmetric(horizontal: Dimensions.height15, vertical: Dimensions.height5),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(25),
+        borderRadius: BorderRadius.circular(Dimensions.height50 /2),
         boxShadow: [
           BoxShadow(
             spreadRadius: 2,
             blurRadius: 3,
-            offset: const Offset(0, 8),
+            offset:  Offset(0, Dimensions.fontSize24/3),
             color: Colors.grey.withOpacity(0.3),
           ),
         ],

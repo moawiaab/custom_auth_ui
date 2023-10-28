@@ -1,3 +1,4 @@
+import 'package:custom_auth_ui/src/core/dimension.dart';
 import 'package:flutter/material.dart';
 import '../texts/text_icon.dart';
 
@@ -17,17 +18,17 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+      margin:  EdgeInsets.symmetric(horizontal: Dimensions.height20, vertical: Dimensions.height20),
       width: double.infinity,
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(80),
+        borderRadius: BorderRadius.circular(Dimensions.height20 * 4),
         boxShadow: [
         BoxShadow(
           blurRadius: 0,
           spreadRadius: 1,
           color: Theme.of(context).primaryColor.withOpacity(0.4),
-          offset: const Offset(3,6)
+          offset:  Offset(Dimensions.fontSize12 / 4,Dimensions.fontSize12 / 2)
         )
       ]),
       child: FilledButton.tonal(

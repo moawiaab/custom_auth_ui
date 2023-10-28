@@ -23,15 +23,15 @@ class LoginPage extends StatelessWidget {
             statusRequired: controller.statusRequired,
             icon: Icons.lock_outline,
             formKey: controller.formKey,
-            bottom: 30,
+            bottom: Dimensions.height30,
             child: Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 50),
-                  child: BigText(text: "11".tr, maxLine: false , align: TextAlign.center, size: 18),
+                  padding:  EdgeInsets.symmetric(horizontal: Dimensions.height50),
+                  child: BigText(text: "11".tr, maxLine: false , align: TextAlign.center, size: Dimensions.fontSize18),
                 ),
                 const Divider(),
-               const SizedBox(height: 20),
+                SizedBox(height: Dimensions.height20),
                 CustomTextInput(
                   hintText: "18".tr,
                   icon: Icons.email_outlined,
@@ -46,11 +46,13 @@ class LoginPage extends StatelessWidget {
                   onTapIcon: controller.changeShowPassword,
                   valid: (val) => validInput(val!, isRequire: true, min: 4, max: 8),
                 ),
-                const SizedBox(height: 20),
+                 SizedBox(height: Dimensions.height20),
                 CustomLoginText(
                     text: "14".tr,
                     text2: "15".tr,
-                    onTap: () {}),
+                    onTap: () {
+                      Get.offNamed("/forget_password");
+                    }),
                 CustomButton(
                   onPressed: () {
                     controller.login();

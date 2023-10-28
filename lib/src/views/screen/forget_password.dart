@@ -1,68 +1,66 @@
+import 'package:custom_auth_ui/src/controllers/forget_password_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../custom_auth_ui.dart';
-import '../../controllers/login_controller.dart';
 import '../widgets/texts/text_login.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({
+class ForgetPasswordPage extends StatelessWidget {
+  const ForgetPasswordPage({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
-    Get.put(LoginController(authRepository: Get.find()));
+    Get.put(ForgetPasswordController(authRepository: Get.find()));
     return WillPopScope(
       onWillPop: alertExitApp,
       child: Scaffold(
         backgroundColor: const Color(0xfff1f1f1),
-        body: GetBuilder<LoginController>(builder: (controller) {
+        body: GetBuilder<ForgetPasswordController>(builder: (controller) {
           return CustomForm(
-            title: "10".tr,
+            title: "14".tr,
             statusRequired: controller.statusRequired,
             icon: Icons.lock_outline,
             formKey: controller.formKey,
-            bottom: 30,
+            bottom: Dimensions.height30,
             child: Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 50),
-                  child: BigText(text: "11".tr, maxLine: false , align: TextAlign.center, size: 18),
+                  padding:  EdgeInsets.symmetric(horizontal: Dimensions.height50),
+                  child: BigText(
+                      text: "39".tr,
+                      maxLine: false,
+                      align: TextAlign.center,
+                      size: 18),
                 ),
                 const Divider(),
-               const SizedBox(height: 20),
+                 SizedBox(height: Dimensions.height20),
                 CustomTextInput(
                   hintText: "18".tr,
                   icon: Icons.email_outlined,
                   controller: controller.emailController,
                   valid: (val) => validInput(val!, isEmail: true),
                 ),
-                CustomTextInput(
-                  hintText: "19".tr,
-                  icon: Icons.password_outlined,
-                  controller: controller.passwordController,
-                  password: controller.showPassword,
-                  onTapIcon: controller.changeShowPassword,
-                  valid: (val) => validInput(val!, isRequire: true, min: 4, max: 8),
-                ),
-                const SizedBox(height: 20),
-                CustomLoginText(
-                    text: "14".tr,
-                    text2: "15".tr,
-                    onTap: () {}),
+                 SizedBox(height: Dimensions.height10),
                 CustomButton(
                   onPressed: () {
-                    controller.login();
+                    controller.changePassword();
                   },
                   icon: Icons.login,
-                  text: "9".tr,
+                  text: "15".tr,
                 ),
+                 SizedBox(height: Dimensions.height20),
+                Padding(
+                  padding:  EdgeInsets.symmetric(horizontal: Dimensions.height30),
+                  child: BigText(text: "40".tr, maxLine: false, size: Dimensions.fontSize16),
+                ),
+                const Divider(),
                 CustomLoginText(
-                    text: "16".tr,
-                    text2: "17".tr,
+                    text: "31".tr,
+                    text2: "9".tr,
                     onTap: () {
-                      Get.offNamed("/register");
+                      Get.offNamed("/login");
                     })
               ],
             ),

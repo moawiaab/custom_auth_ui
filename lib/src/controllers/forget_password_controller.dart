@@ -7,51 +7,41 @@ import 'package:custom_auth_ui/src/data/repository/auth_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-abstract class LoginControllerAbs extends GetxController {
+abstract class ForgetPasswordControllerAbs extends GetxController {
   final AuthRepository authRepository;
-  LoginControllerAbs({required this.authRepository});
-  void login();
-  void changeShowPassword();
+  ForgetPasswordControllerAbs({required this.authRepository});
+  void changePassword();
   void clearInput();
 }
 
-class LoginController extends LoginControllerAbs {
+class ForgetPasswordController extends ForgetPasswordControllerAbs {
   StatusRequired statusRequired = StatusRequired.none;
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   final TextEditingController emailController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
 
-   bool showPassword = true;
-
-  LoginController({required super.authRepository});
+  ForgetPasswordController({required super.authRepository});
 
   @override
-  Future<void> login({String? deviceName = "test-app"}) async {
+  Future<void> changePassword({String? deviceName = "test-app"}) async {
     var formState = formKey.currentState;
     try {
       if (formState!.validate()) {
         statusRequired = StatusRequired.loading;
         update();
-        Response response = await authRepository.login(LoginModel(
-            email: emailController.text,
-            password: passwordController.text,
-            deviceName: deviceName));
+        Response response =
+            (await authRepository.forgetPassword(emailController.text)) as Response;
         print(response.body);
         if (response.statusCode == 200) {
           var userData = response.body['user'];
           clearInput();
-          authRepository.saveUserData(
-              email: userData['email'],
-              name: userData['name'],
-              phone: userData['phone']);
-          authRepository.saveToken(response.body['token']);
-          Get.offNamed("/");
+          Get.offNamed("/login");
         } else {
           customSnackbar(response.body['message']);
         }
         statusRequired = StatusRequired.none;
       } else {
-        customSnackbar("اكمل الحقول من فضلك", color: Colors.yellowAccent, title: "تنبيه!");
+        customSnackbar("اكمل الحقول من فضلك",
+            color: Colors.yellowAccent, title: "تنبيه!");
       }
     } catch (e) {
       customSnackbar(e.toString());
@@ -61,21 +51,13 @@ class LoginController extends LoginControllerAbs {
   }
 
   @override
-  void changeShowPassword() {
-    showPassword = !showPassword;
-    update();
-  }
-
-  @override
   void onInit() {
     emailController.text = "admin@admin.com";
-    passwordController.text = "password";
     super.onInit();
   }
 
   @override
   void clearInput() {
     emailController.text = "";
-    passwordController.text = "";
   }
 }

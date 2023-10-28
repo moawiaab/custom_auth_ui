@@ -1,8 +1,6 @@
-import 'package:custom_auth_ui/src/core/status_require.dart';
+import 'package:custom_auth_ui/custom_auth_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import '../../../custom_input_and_icon.dart';
 
 class CustomForm extends StatelessWidget {
   const CustomForm({
@@ -31,7 +29,7 @@ class CustomForm extends StatelessWidget {
           height: Get.height / 2,
           decoration: BoxDecoration(
             color: Colors.red,
-            borderRadius: BorderRadius.circular(30),
+            borderRadius: BorderRadius.circular(Dimensions.height30),
             gradient: LinearGradient(
               colors: colors ??
                   [
@@ -50,11 +48,11 @@ class CustomForm extends StatelessWidget {
             ],
           ),
           child: Container(
-            margin: const EdgeInsets.only(top: 40),
+            margin:  EdgeInsets.only(top: Dimensions.height40),
             child: Column(children: [
               CustomIcon(
                 icon: icon!,
-                iconSize: 120,
+                iconSize: Dimensions.height40 * 3,
                 iconColor: Colors.green,
                 text: title,
               )
@@ -71,10 +69,10 @@ class CustomForm extends StatelessWidget {
           right: 0,
           bottom: bottom!,
           child: Container(
-            margin: const EdgeInsets.all(20),
-            padding: const EdgeInsets.symmetric(vertical: 15),
+            margin:  EdgeInsets.all(Dimensions.height20),
+            padding:  EdgeInsets.symmetric(vertical: Dimensions.height15),
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
+                borderRadius: BorderRadius.circular(Dimensions.height20),
                 color: Colors.white,
                 boxShadow: [
                   BoxShadow(
@@ -95,9 +93,9 @@ class CustomForm extends StatelessWidget {
                 right: 0,
                 bottom: bottom,
                 child: Container(
-                  margin: const EdgeInsets.all(20),
+                  margin:  EdgeInsets.all(Dimensions.height20),
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
+                      borderRadius: BorderRadius.circular(Dimensions.height20),
                       color: Colors.black.withOpacity(0.3)),
                   child: const Center(
                       child: Image(

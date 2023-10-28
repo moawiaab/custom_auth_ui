@@ -23,12 +23,16 @@ class RegisterPage extends StatelessWidget {
             statusRequired: controller.statusRequired,
             icon: Icons.lock_outline,
             formKey: controller.formKey,
-            bottom: 30,
+            bottom: Dimensions.height30,
             child: Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 50),
-                  child: BigText(text: "24".tr, maxLine: false , align: TextAlign.center, size: 18),
+                  padding:  EdgeInsets.symmetric(horizontal: Dimensions.height50),
+                  child: BigText(
+                      text: "24".tr,
+                      maxLine: false,
+                      align: TextAlign.center,
+                      size: Dimensions.fontSize18),
                 ),
                 const Divider(),
                 CustomTextInput(
@@ -57,10 +61,10 @@ class RegisterPage extends StatelessWidget {
                   controller: controller.passwordController,
                   password: controller.showPassword,
                   onTapIcon: controller.changeShowPassword,
-                  valid: (val) => validInput(val!, isRequire: true, min: 4, max: 8),
+                  valid: (val) =>
+                      validInput(val!, isRequire: true, min: 4, max: 8),
                 ),
-                const SizedBox(height: 20),
-
+                 SizedBox(height: Dimensions.height20),
                 CustomButton(
                   onPressed: () {
                     controller.register();
@@ -69,11 +73,12 @@ class RegisterPage extends StatelessWidget {
                   text: "17".tr,
                 ),
                 CustomLoginText(
-                    text: "25".tr,
-                    text2: "26".tr,
-                    onTap: () {
-                      Get.offNamed("/login");
-                    })
+                  text: "25".tr,
+                  text2: "26".tr,
+                  onTap: () {
+                    Get.offNamed("/login");
+                  },
+                )
               ],
             ),
           );

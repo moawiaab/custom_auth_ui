@@ -8,3 +8,4 @@ export 'core/services.dart';
 
 export 'core/localization/locale_controller.dart';
 export 'core/localization/translation.dart';
+export 'core/dimension.dart';

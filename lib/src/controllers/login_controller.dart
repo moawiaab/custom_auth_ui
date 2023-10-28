@@ -32,10 +32,10 @@ class LoginController extends LoginControllerAbs {
       if (formState!.validate()) {
         statusRequired = StatusRequired.loading;
         update();
-        Response response = await authRepository.login(LoginModel(
+        Response response = (await authRepository.login(LoginModel(
             email: emailController.text,
             password: passwordController.text,
-            deviceName: deviceName));
+            deviceName: deviceName))) as Response;
         print(response.body);
         if (response.statusCode == 200) {
           var userData = response.body['user'];

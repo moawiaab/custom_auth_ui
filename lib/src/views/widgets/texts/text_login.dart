@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'big_text.dart';
+import '../../../../custom_auth_ui.dart';
 
 class CustomLoginText extends StatelessWidget {
   const CustomLoginText(
@@ -12,15 +12,15 @@ class CustomLoginText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 20),
+      margin:  EdgeInsets.symmetric(horizontal: Dimensions.height20),
       child: Row(
         children: [
-          BigText(text: text, textColor: Colors.grey, size: 18),
+          BigText(text: text, textColor: Colors.grey, size: Dimensions.fontSize18),
           InkWell(
             onTap: onTap,
             child: BigText(
               text: text2,
-              size: 16,
+              size: Dimensions.fontSize16,
               textColor: Theme.of(context).primaryColor,
             ),
           )

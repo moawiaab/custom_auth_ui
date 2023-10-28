@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../custom_auth_ui.dart';
+
 class CustomCart extends StatelessWidget {
   const CustomCart({
     super.key,
@@ -8,7 +10,7 @@ class CustomCart extends StatelessWidget {
     this.c2 = Colors.yellow,
     this.c3 = Colors.green,
     this.c4 = Colors.white,
-    this.rBorder = 10,
+    this.rBorder,
     this.dx = 0,
     this.dy = 5,
     this.height,
@@ -38,7 +40,7 @@ class CustomCart extends StatelessWidget {
       padding: padding,
       decoration: BoxDecoration(
         color: Colors.red,
-        borderRadius: BorderRadius.circular(rBorder!),
+        borderRadius: BorderRadius.circular(rBorder ?? Dimensions.height10),
         boxShadow: [
           BoxShadow(
               color: Colors.grey.withOpacity(0.5),

@@ -32,13 +32,13 @@ class RegisterController extends RegisterControllerAbs {
       if (formState!.validate()) {
         statusRequired = StatusRequired.loading;
         update();
-        Response response = await authRepository.register(RegisterModel(
+        Response response = (await authRepository.register(RegisterModel(
           name: nameController.text,
           phone: phoneController.text,
           email: emailController.text,
           password: passwordController.text,
           deviceName: deviceName,
-        ));
+        ))) as Response;
         print(response.body);
         if (response.statusCode == 200) {
           var userData = response.body['user'];
