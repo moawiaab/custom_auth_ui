@@ -1,4 +1,3 @@
-import 'dart:convert';
 
 import 'package:custom_auth_ui/src/core/functions/custom_snackbar.dart';
 import 'package:custom_auth_ui/src/core/status_require.dart';
@@ -35,7 +34,7 @@ class LoginController extends LoginControllerAbs {
         Response response = (await authRepository.login(LoginModel(
             email: emailController.text,
             password: passwordController.text,
-            deviceName: deviceName))) as Response;
+            deviceName: deviceName)));
         print(response.body);
         if (response.statusCode == 200) {
           var userData = response.body['user'];

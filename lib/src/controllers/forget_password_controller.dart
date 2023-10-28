@@ -1,8 +1,5 @@
-import 'dart:convert';
-
 import 'package:custom_auth_ui/src/core/functions/custom_snackbar.dart';
 import 'package:custom_auth_ui/src/core/status_require.dart';
-import 'package:custom_auth_ui/src/data/models/login_model.dart';
 import 'package:custom_auth_ui/src/data/repository/auth_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -29,10 +26,9 @@ class ForgetPasswordController extends ForgetPasswordControllerAbs {
         statusRequired = StatusRequired.loading;
         update();
         Response response =
-            (await authRepository.forgetPassword(emailController.text)) as Response;
+            (await authRepository.forgetPassword(emailController.text));
         print(response.body);
         if (response.statusCode == 200) {
-          var userData = response.body['user'];
           clearInput();
           Get.offNamed("/login");
         } else {

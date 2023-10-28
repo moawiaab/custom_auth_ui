@@ -7,9 +7,12 @@ class CustomServices extends GetxService {
   late SharedPreferences sharedPreferences;
   late ApiClient api;
 
+  String token = "";
+
   Future<CustomServices> init(String baseUrl) async {
     sharedPreferences = await SharedPreferences.getInstance();
     api = ApiClient(appBaseUrl: baseUrl);
+    token = sharedPreferences.getString("token") ?? "";
     // api.appBaseUrl = baseUrl;
 
     return this;
