@@ -4,6 +4,14 @@ The authentication UI for the Flutter package communicates with Laravel's full a
 
 ## Widgets
 
+## Images
+![login](example/assets/images/login.png)
+
+![register](example/assets/images/register.png)
+
+![loading](example/assets/images/loading.gif)
+
+
 ```dart
 CustomAuthUI().customSearch(
               clearText: () {},
