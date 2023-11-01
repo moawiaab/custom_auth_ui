@@ -9,3 +9,6 @@ set onboarding
 
 ## 1.0.0
 add example file 
+
+## 1.0.1
+set dart v to 3.1.3
