@@ -13,8 +13,6 @@ class OnboardingMiddleware extends GetMiddleware {
     if (services.token.isNotEmpty) {
       // return super.redirect("/");
       return const RouteSettings(name: "/");
-    } else {
-      return const RouteSettings(name: "/login");
-    }
+    } 
   }
 }

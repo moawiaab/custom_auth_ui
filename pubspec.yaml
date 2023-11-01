@@ -1,8 +1,10 @@
 name: custom_auth_ui
 description: The authentication UI for the Flutter package communicates with Laravel's full authentication
-version: 0.0.2
+version: 1.0.0
 homepage: https://github.com/moawiaab/custom_auth_ui.git
-
+topics: 
+  - server
+  - widgets
 environment:
   sdk: '>=3.1.4 <4.0.0'
   flutter: ">=1.17.0"
