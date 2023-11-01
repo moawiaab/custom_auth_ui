@@ -16,7 +16,8 @@ class AuthRepository extends GetxService {
   }
 
   Future<Response> forgetPassword(String email) async {
-    return await services.api.postData("/password/email", body: {"email" : email});
+    return await services.api
+        .postData("/password/email", body: {"email": email});
   }
 
   saveToken(String token) {
@@ -28,6 +29,4 @@ class AuthRepository extends GetxService {
     services.sharedPreferences.setString("userName", name);
     services.sharedPreferences.setString("userPhone", phone!);
   }
-
-
 }

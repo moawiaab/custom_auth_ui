@@ -32,16 +32,18 @@ class CustomTextInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin:  EdgeInsets.symmetric(vertical: Dimensions.fontSize24/3, horizontal: Dimensions.height15),
-      padding:  EdgeInsets.symmetric(horizontal: Dimensions.height15, vertical: Dimensions.height5),
+      margin: EdgeInsets.symmetric(
+          vertical: Dimensions.fontSize24 / 3, horizontal: Dimensions.height15),
+      padding: EdgeInsets.symmetric(
+          horizontal: Dimensions.height15, vertical: Dimensions.height5),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(Dimensions.height50 /2),
+        borderRadius: BorderRadius.circular(Dimensions.height50 / 2),
         boxShadow: [
           BoxShadow(
             spreadRadius: 2,
             blurRadius: 3,
-            offset:  Offset(0, Dimensions.fontSize24/3),
+            offset: Offset(0, Dimensions.fontSize24 / 3),
             color: Colors.grey.withOpacity(0.3),
           ),
         ],

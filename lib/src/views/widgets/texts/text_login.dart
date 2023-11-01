@@ -12,10 +12,11 @@ class CustomLoginText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin:  EdgeInsets.symmetric(horizontal: Dimensions.height20),
+      margin: EdgeInsets.symmetric(horizontal: Dimensions.height20),
       child: Row(
         children: [
-          BigText(text: text, textColor: Colors.grey, size: Dimensions.fontSize18),
+          BigText(
+              text: text, textColor: Colors.grey, size: Dimensions.fontSize18),
           InkWell(
             onTap: onTap,
             child: BigText(

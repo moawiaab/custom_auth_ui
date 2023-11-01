@@ -1,1 +1,1 @@
-enum StatusRequired { loading, none, success, offline, serverError}
+enum StatusRequired { loading, none, success, offline, serverError }

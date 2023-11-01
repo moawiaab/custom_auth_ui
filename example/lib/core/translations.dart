@@ -5,7 +5,7 @@ class CustomTranslations extends Translations {
   @override
   Map<String, Map<String, String>> get keys => {
         "ar": {
-          "lang" :"تغيير اللغة",
+          "lang": "تغيير اللغة",
           "ar": "عربي",
           "en": "انجليزي",
           ...TranslationData().keysAr,
@@ -15,7 +15,7 @@ class CustomTranslations extends Translations {
           "bt4": "المصروفات",
         },
         "en": {
-          "lang" : "change the language",
+          "lang": "change the language",
           "ar": "Arabic",
           "en": "English",
           ...TranslationData().keysEn,

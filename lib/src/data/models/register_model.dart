@@ -5,7 +5,8 @@ class RegisterModel {
   String? password;
   String? deviceName;
 
-  RegisterModel({this.email, this.password, this.deviceName, this.phone, this.name});
+  RegisterModel(
+      {this.email, this.password, this.deviceName, this.phone, this.name});
 
   RegisterModel.fromJson(Map<String, dynamic> json) {
     name = json['name'];

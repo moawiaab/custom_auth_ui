@@ -27,7 +27,8 @@ class ForgetPasswordPage extends StatelessWidget {
             child: Column(
               children: [
                 Padding(
-                  padding:  EdgeInsets.symmetric(horizontal: Dimensions.height50),
+                  padding:
+                      EdgeInsets.symmetric(horizontal: Dimensions.height50),
                   child: BigText(
                       text: "39".tr,
                       maxLine: false,
@@ -35,14 +36,14 @@ class ForgetPasswordPage extends StatelessWidget {
                       size: 18),
                 ),
                 const Divider(),
-                 SizedBox(height: Dimensions.height20),
+                SizedBox(height: Dimensions.height20),
                 CustomTextInput(
                   hintText: "18".tr,
                   icon: Icons.email_outlined,
                   controller: controller.emailController,
                   valid: (val) => validInput(val!, isEmail: true),
                 ),
-                 SizedBox(height: Dimensions.height10),
+                SizedBox(height: Dimensions.height10),
                 CustomButton(
                   onPressed: () {
                     controller.changePassword();
@@ -50,10 +51,14 @@ class ForgetPasswordPage extends StatelessWidget {
                   icon: Icons.login,
                   text: "15".tr,
                 ),
-                 SizedBox(height: Dimensions.height20),
+                SizedBox(height: Dimensions.height20),
                 Padding(
-                  padding:  EdgeInsets.symmetric(horizontal: Dimensions.height30),
-                  child: BigText(text: "40".tr, maxLine: false, size: Dimensions.fontSize16),
+                  padding:
+                      EdgeInsets.symmetric(horizontal: Dimensions.height30),
+                  child: BigText(
+                      text: "40".tr,
+                      maxLine: false,
+                      size: Dimensions.fontSize16),
                 ),
                 const Divider(),
                 CustomLoginText(

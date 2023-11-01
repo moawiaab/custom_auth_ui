@@ -27,8 +27,13 @@ class LoginPage extends StatelessWidget {
             child: Column(
               children: [
                 Padding(
-                  padding:  EdgeInsets.symmetric(horizontal: Dimensions.height50),
-                  child: BigText(text: "11".tr, maxLine: false , align: TextAlign.center, size: Dimensions.fontSize18),
+                  padding:
+                      EdgeInsets.symmetric(horizontal: Dimensions.height50),
+                  child: BigText(
+                      text: "11".tr,
+                      maxLine: false,
+                      align: TextAlign.center,
+                      size: Dimensions.fontSize18),
                 ),
                 const Divider(),
                 SizedBox(height: Dimensions.height20),
@@ -44,9 +49,10 @@ class LoginPage extends StatelessWidget {
                   controller: controller.passwordController,
                   password: controller.showPassword,
                   onTapIcon: controller.changeShowPassword,
-                  valid: (val) => validInput(val!, isRequire: true, min: 4, max: 8),
+                  valid: (val) =>
+                      validInput(val!, isRequire: true, min: 4, max: 8),
                 ),
-                 SizedBox(height: Dimensions.height20),
+                SizedBox(height: Dimensions.height20),
                 CustomLoginText(
                     text: "14".tr,
                     text2: "15".tr,

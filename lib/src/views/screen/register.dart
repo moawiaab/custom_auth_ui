@@ -27,7 +27,8 @@ class RegisterPage extends StatelessWidget {
             child: Column(
               children: [
                 Padding(
-                  padding:  EdgeInsets.symmetric(horizontal: Dimensions.height50),
+                  padding:
+                      EdgeInsets.symmetric(horizontal: Dimensions.height50),
                   child: BigText(
                       text: "24".tr,
                       maxLine: false,
@@ -64,7 +65,7 @@ class RegisterPage extends StatelessWidget {
                   valid: (val) =>
                       validInput(val!, isRequire: true, min: 4, max: 8),
                 ),
-                 SizedBox(height: Dimensions.height20),
+                SizedBox(height: Dimensions.height20),
                 CustomButton(
                   onPressed: () {
                     controller.register();

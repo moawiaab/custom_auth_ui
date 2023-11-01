@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
 class CustomIcon extends StatelessWidget {
-  const CustomIcon({
-    super.key,
-    this.bColor,
-    this.iconSize = 120,
-    this.textSize,
-    this.iconColor =  Colors.black54,
-    this.textColor,
-    this.icon = Icons.format_list_bulleted, required this.text
-  });
+  const CustomIcon(
+      {super.key,
+      this.bColor,
+      this.iconSize = 120,
+      this.textSize,
+      this.iconColor = Colors.black54,
+      this.textColor,
+      this.icon = Icons.format_list_bulleted,
+      required this.text});
   final IconData? icon;
   final Color? bColor;
   final double? iconSize;
@@ -29,7 +29,8 @@ class CustomIcon extends StatelessWidget {
             text,
             style: TextStyle(
                 fontSize: textSize ?? iconSize! / 4,
-                fontWeight: FontWeight.bold, color: textColor ?? iconColor),
+                fontWeight: FontWeight.bold,
+                color: textColor ?? iconColor),
           )
         ],
       ),

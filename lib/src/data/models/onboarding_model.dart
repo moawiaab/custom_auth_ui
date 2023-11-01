@@ -8,5 +8,4 @@ class OnboardingModel {
     required this.description,
     required this.image,
   });
-
 }

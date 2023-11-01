@@ -18,3 +18,6 @@ Solve coordination problems
 
 ## 1.0.3
 add onchange function to search input
+
+## 1.0.4
+dart format all file

@@ -3,6 +3,4 @@ import 'package:get/get.dart';
 
 class SettingsController extends GetxController {
   final LocaleController local = LocaleController();
-
-  
 }

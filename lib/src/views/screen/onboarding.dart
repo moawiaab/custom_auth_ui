@@ -107,7 +107,9 @@ class Onboarding extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   ElevatedButton.icon(
-                    onPressed: () {controller.skip();},
+                    onPressed: () {
+                      controller.skip();
+                    },
                     icon: const Icon(Icons.skip_next_rounded),
                     label: Text("back".tr),
                   ),
@@ -126,10 +128,9 @@ class Onboarding extends StatelessWidget {
                     onPressed: () {
                       controller.next(listData.length - 1);
                     },
-                    icon: Icon(
-                        controller.currentPage + 1 == listData.length
-                            ? Icons.done
-                            : Icons.arrow_forward_ios_rounded),
+                    icon: Icon(controller.currentPage + 1 == listData.length
+                        ? Icons.done
+                        : Icons.arrow_forward_ios_rounded),
                   ),
                 ],
               ),

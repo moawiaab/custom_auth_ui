@@ -7,11 +7,9 @@ import 'package:example/views/screen/product_screen.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
 class HomeController extends GetxController {
-
-  
   late PersistentTabController pageController;
   late bool hideNavBar;
-  List<String> pageTitleList = ["bt1".tr,"bt2".tr,"bt3".tr,"bt4".tr];
+  List<String> pageTitleList = ["bt1".tr, "bt2".tr, "bt3".tr, "bt4".tr];
   late String pageTitle = pageTitleList[0];
 
   List<Widget> buildScreens() => [

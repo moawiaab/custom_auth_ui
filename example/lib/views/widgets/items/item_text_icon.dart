@@ -35,20 +35,21 @@ class ItemTextWithIcon extends StatelessWidget {
             bottomRight:
                 Radius.circular(local == "en" ? Dimensions.height20 : 0),
           ),
-          color: selected!
-              ? Theme.of(context).primaryColor
-              : Colors.white,
+          color: selected! ? Theme.of(context).primaryColor : Colors.white,
           boxShadow: [
             BoxShadow(
-                offset: const Offset(0, 5),
-                blurRadius: 0,
-                color: Theme.of(context).primaryColor.withOpacity(0.2),)
+              offset: const Offset(0, 5),
+              blurRadius: 0,
+              color: Theme.of(context).primaryColor.withOpacity(0.2),
+            )
           ],
         ),
         child: Row(
           children: [
-            Icon(icon, size: Dimensions.height25, color: selected! ? Colors.white: color),
-            BigText(text: text, textColor: selected! ? Colors.white: color)
+            Icon(icon,
+                size: Dimensions.height25,
+                color: selected! ? Colors.white : color),
+            BigText(text: text, textColor: selected! ? Colors.white : color)
           ],
         ),
       ),

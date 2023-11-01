@@ -10,7 +10,8 @@ class CustomForm extends StatelessWidget {
     this.formKey,
     this.bottom = 0,
     this.icon = Icons.format_list_bulleted,
-    required this.statusRequired, required this.title,
+    required this.statusRequired,
+    required this.title,
   });
   final Widget child;
   final List<Color>? colors;
@@ -48,7 +49,7 @@ class CustomForm extends StatelessWidget {
             ],
           ),
           child: Container(
-            margin:  EdgeInsets.only(top: Dimensions.height40),
+            margin: EdgeInsets.only(top: Dimensions.height40),
             child: Column(children: [
               CustomIcon(
                 icon: icon!,
@@ -69,8 +70,8 @@ class CustomForm extends StatelessWidget {
           right: 0,
           bottom: bottom!,
           child: Container(
-            margin:  EdgeInsets.all(Dimensions.height20),
-            padding:  EdgeInsets.symmetric(vertical: Dimensions.height15),
+            margin: EdgeInsets.all(Dimensions.height20),
+            padding: EdgeInsets.symmetric(vertical: Dimensions.height15),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(Dimensions.height20),
                 color: Colors.white,
@@ -93,7 +94,7 @@ class CustomForm extends StatelessWidget {
                 right: 0,
                 bottom: bottom,
                 child: Container(
-                  margin:  EdgeInsets.all(Dimensions.height20),
+                  margin: EdgeInsets.all(Dimensions.height20),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(Dimensions.height20),
                       color: Colors.black.withOpacity(0.3)),

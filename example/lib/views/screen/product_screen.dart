@@ -13,10 +13,7 @@ class ProductScreen extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          
-          CustomAuthUI().customSearch(
-            
-          ),
+          CustomAuthUI().customSearch(),
           GetBuilder<ProductController>(builder: (controller) {
             return Container(
               padding: EdgeInsets.symmetric(horizontal: Dimensions.height5),
@@ -31,8 +28,6 @@ class ProductScreen extends StatelessWidget {
                   }),
             );
           }),
-
-          
         ],
       ),
     );

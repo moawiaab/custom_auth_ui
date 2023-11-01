@@ -1,4 +1,3 @@
-
 export 'core/status_require.dart';
 export 'core/functions/custom_snackbar.dart';
 export 'core/functions/exit_app.dart';

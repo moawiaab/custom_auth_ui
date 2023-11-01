@@ -14,11 +14,9 @@ class HomeScreen extends GetView<HomeController> {
     Get.put(HomeController());
     return Scaffold(
       appBar: AppBar(
-        title: GetBuilder<HomeController>(
-          builder: (context) {
-            return  Text(context.pageTitle);
-          }
-        ),
+        title: GetBuilder<HomeController>(builder: (context) {
+          return Text(context.pageTitle);
+        }),
         backgroundColor: Colors.grey.withOpacity(0.1),
       ),
       drawer: Drawer(

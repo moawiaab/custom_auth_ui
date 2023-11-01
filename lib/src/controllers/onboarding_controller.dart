@@ -16,7 +16,7 @@ class OnboardingController extends GetxController {
       currentPage++;
       pageController.animateToPage(currentPage,
           duration: const Duration(milliseconds: 900), curve: Curves.easeInOut);
-    }else{
+    } else {
       Get.offNamed("/login");
     }
 

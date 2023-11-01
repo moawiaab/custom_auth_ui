@@ -28,11 +28,11 @@ class CategoryItem extends StatelessWidget {
           CircleAvatar(
             backgroundColor: Colors.grey.withOpacity(0.2),
             child: BigText(
-                text: num.toString(),
-                textColor: Colors.red,
-                size: Dimensions.fontSize14,
-                fontWeight: true,
-                ),
+              text: num.toString(),
+              textColor: Colors.red,
+              size: Dimensions.fontSize14,
+              fontWeight: true,
+            ),
           ),
           BigText(
             text: text,
