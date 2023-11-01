@@ -1,5 +1,3 @@
-import 'package:get/get.dart';
-
 class TranslationData {
   Map<String, String> get keysAr => {
         "1": "اختر اللغة",

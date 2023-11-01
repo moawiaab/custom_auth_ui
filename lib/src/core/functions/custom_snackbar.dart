@@ -1,4 +1,3 @@
-import 'package:custom_auth_ui/src/views/widgets/texts/big_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

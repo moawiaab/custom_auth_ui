@@ -15,6 +15,7 @@ CustomServices services = Get.find();
       // return super.redirect("/");
       return const RouteSettings(name: "/");
     }
+    return null;
     
   }
 

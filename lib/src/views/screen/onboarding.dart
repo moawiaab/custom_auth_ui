@@ -1,8 +1,6 @@
 import 'package:custom_auth_ui/src/controllers/onboarding_controller.dart';
 import 'package:custom_auth_ui/src/custom_core.dart';
 import 'package:custom_auth_ui/src/custom_input_and_icon.dart';
-import 'package:custom_auth_ui/src/data/models/onboarding_model.dart';
-import 'package:custom_auth_ui/src/data/staticData/onboarding_list.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

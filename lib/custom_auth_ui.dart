@@ -1,6 +1,6 @@
 library custom_auth_ui;
 
-import 'package:custom_auth_ui/src/views/widgets/customs/top_search_icon.dart';
+import 'src/views/widgets/customs/top_search_icon.dart';
 import 'package:flutter/material.dart';
 
 export 'src/views/screen/login.dart';

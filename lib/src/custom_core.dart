@@ -1,4 +1,3 @@
-library custom_core;
 
 export 'core/status_require.dart';
 export 'core/functions/custom_snackbar.dart';

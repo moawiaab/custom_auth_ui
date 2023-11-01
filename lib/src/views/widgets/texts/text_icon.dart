@@ -1,8 +1,6 @@
 import 'package:custom_auth_ui/custom_auth_ui.dart';
 import 'package:flutter/material.dart';
 
-import 'big_text.dart';
-
 class TextWithIcon extends StatelessWidget {
   const TextWithIcon(
       {super.key,
