@@ -1,5 +1,5 @@
 import 'package:custom_auth_ui/src/core/services.dart';
-import 'package:flutter/src/widgets/navigator.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class AuthMiddleware extends GetMiddleware {

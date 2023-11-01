@@ -12,3 +12,5 @@ add example file
 
 ## 1.0.1
 set dart v to 3.1.3
+
+## 1.0.2

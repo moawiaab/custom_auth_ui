@@ -17,5 +17,6 @@ CustomAuthUI().customSearch(
               clearText: () {},
               closeable: true,
               color: Colors.red,
-              icon: Icons.refresh,)
+              icon: Icons.refresh,
+              )
 ```
