@@ -1,22 +1,56 @@
+import 'dart:async';
+
 import 'package:custom_auth_ui/custom_auth_ui.dart';
 import 'package:flutter/material.dart';
+import 'package:rxdart/rxdart.dart';
 
-class CustomSearchAndIcon extends StatelessWidget {
+class CustomSearchAndIcon extends StatefulWidget {
   const CustomSearchAndIcon({
     super.key,
     this.icon = Icons.refresh_rounded,
-    this.controller,
     this.onTapIcon,
     this.closeable = false,
     this.clearText,
     required this.color,
+    this.onChanged,
+    this.debounceTime,
   });
   final IconData? icon;
-  final TextEditingController? controller;
   final void Function()? onTapIcon;
   final bool? closeable;
   final void Function()? clearText;
   final Color color;
+  final ValueChanged<String>? onChanged;
+  final Duration? debounceTime;
+
+  @override
+  State<CustomSearchAndIcon> createState() => _CustomSearchAndIconState();
+}
+
+class _CustomSearchAndIconState extends State<CustomSearchAndIcon> {
+  final StreamController<String> _textChangeStreamController =
+      StreamController();
+  late StreamSubscription _textChangesSubscription;
+
+  @override
+  void initState() {
+    _textChangesSubscription = _textChangeStreamController.stream
+        .debounceTime(
+          widget.debounceTime ??
+              const Duration(
+                seconds: 1,
+              ),
+        )
+        .distinct()
+        .listen((text) {
+      final onChanged = widget.onChanged;
+      if (onChanged != null) {
+        onChanged(text);
+      }
+    });
+
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,35 +66,43 @@ class CustomSearchAndIcon extends StatelessWidget {
               height: Dimensions.height50,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(Dimensions.height10),
-                color: color.withOpacity(0.1),
+                color: widget.color.withOpacity(0.1),
               ),
               child: TextFormField(
-                controller: controller,
+                onChanged: _textChangeStreamController.add,
                 decoration: InputDecoration(
                     border: InputBorder.none,
-                    icon: Icon(Icons.search, color: color),
-                    suffixIcon: closeable!
+                    icon: Icon(Icons.search, color: widget.color),
+                    suffixIcon: widget.closeable!
                         ? InkWell(
-                            onTap: clearText, child: const Icon(Icons.close))
+                            onTap: widget.clearText,
+                            child: const Icon(Icons.close))
                         : null),
               ),
             ),
           ),
           SizedBox(width: Dimensions.height10),
           InkWell(
-            onTap: onTapIcon,
+            onTap: widget.onTapIcon,
             child: Container(
               height: Dimensions.height50,
               width: Dimensions.height50,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(Dimensions.height10),
-                color: color.withOpacity(0.1),
+                color: widget.color.withOpacity(0.1),
               ),
-              child: Icon(icon, color: color),
+              child: Icon(widget.icon, color: widget.color),
             ),
           )
         ],
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    _textChangeStreamController.close();
+    _textChangesSubscription.cancel();
+    super.dispose();
   }
 }

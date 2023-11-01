@@ -15,3 +15,6 @@ set dart v to 3.1.3
 
 ## 1.0.2
 Solve coordination problems
+
+## 1.0.3
+add onchange function to search input

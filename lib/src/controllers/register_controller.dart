@@ -39,7 +39,7 @@ class RegisterController extends RegisterControllerAbs {
           password: passwordController.text,
           deviceName: deviceName,
         )));
-        print(response.body);
+
         if (response.statusCode == 200) {
           var userData = response.body['user'];
           clearInput();

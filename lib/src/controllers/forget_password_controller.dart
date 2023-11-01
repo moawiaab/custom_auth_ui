@@ -27,7 +27,6 @@ class ForgetPasswordController extends ForgetPasswordControllerAbs {
         update();
         Response response =
             (await authRepository.forgetPassword(emailController.text));
-        print(response.body);
         if (response.statusCode == 200) {
           clearInput();
           Get.offNamed("/login");

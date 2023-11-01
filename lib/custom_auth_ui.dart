@@ -11,19 +11,21 @@ export 'src/custom_view.dart';
 class CustomAuthUI {
   CustomSearchAndIcon customSearch({
     IconData? icon = Icons.refresh_rounded,
-    TextEditingController? controller,
     void Function()? onTapIcon,
     bool? closeable = false,
     void Function()? clearText,
-    Color? color = Colors.grey,
+    Color color = Colors.grey,
+    void Function(String)? onChanged,
+    Duration? debounceTime,
   }) {
     return CustomSearchAndIcon(
       closeable: closeable,
       clearText: clearText,
-      color: color!,
-      controller: controller,
+      color: color,
       icon: icon,
       onTapIcon: onTapIcon,
+      debounceTime: debounceTime,
+      onChanged: onChanged,
     );
   }
 }

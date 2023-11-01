@@ -1,4 +1,3 @@
-
 import 'package:custom_auth_ui/src/core/functions/custom_snackbar.dart';
 import 'package:custom_auth_ui/src/core/status_require.dart';
 import 'package:custom_auth_ui/src/data/models/login_model.dart';
@@ -20,7 +19,7 @@ class LoginController extends LoginControllerAbs {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
-   bool showPassword = true;
+  bool showPassword = true;
 
   LoginController({required super.authRepository});
 
@@ -35,7 +34,6 @@ class LoginController extends LoginControllerAbs {
             email: emailController.text,
             password: passwordController.text,
             deviceName: deviceName)));
-        print(response.body);
         if (response.statusCode == 200) {
           var userData = response.body['user'];
           clearInput();
@@ -50,7 +48,8 @@ class LoginController extends LoginControllerAbs {
         }
         statusRequired = StatusRequired.none;
       } else {
-        customSnackbar("اكمل الحقول من فضلك", color: Colors.yellowAccent, title: "تنبيه!");
+        customSnackbar("اكمل الحقول من فضلك",
+            color: Colors.yellowAccent, title: "تنبيه!");
       }
     } catch (e) {
       customSnackbar(e.toString());

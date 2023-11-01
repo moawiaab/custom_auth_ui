@@ -14,6 +14,6 @@ class OnboardingMiddleware extends GetMiddleware {
       // return super.redirect("/");
       return const RouteSettings(name: "/");
     }
-    return null; 
+    return null;
   }
 }
