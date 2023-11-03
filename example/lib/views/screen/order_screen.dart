@@ -1,3 +1,4 @@
+import 'package:custom_auth_ui/custom_auth_ui.dart';
 import 'package:flutter/material.dart';
 
 class OrderScreen extends StatelessWidget {
@@ -5,9 +6,51 @@ class OrderScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Center(
-        child: Text("screen Order"),
+        child: Column(
+          children: [
+            CustomSlidable(
+              adding: true,
+              shearing: true,
+              toggle: true,
+              toggling: true,
+              child: const ListTile(
+                title: Text("data test"),
+              ),
+              onPressed: (c) {
+                print(c);
+              },
+            ),
+            CustomSlidable(
+              child: const ListTile(
+                title: Text("data test"),
+              ),
+              onPressed: (c) {},
+            ),
+            CustomSlidable(
+              child: const ListTile(
+                title: Text("data test"),
+              ),
+              onPressed: (c) {},
+            ),
+            CustomSlidable(
+              child: const ListTile(
+                title: Text("data test"),
+              ),
+              onPressed: (c) {},
+            ),
+            CustomSlidable(
+              toggle: false,
+              child: const ListTile(
+                title: Text("data test"),
+              ),
+              onPressed: (c) {
+                print(c);
+              },
+            ),
+          ],
+        ),
       ),
     );
   }

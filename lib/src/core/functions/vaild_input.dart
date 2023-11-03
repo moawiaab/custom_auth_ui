@@ -11,27 +11,27 @@ validInput(
   int max = 0,
 }) {
   if (val.isEmpty) {
-    return "input is require";
+    return "2".tr;
   }
 
   if (isEmail && !GetUtils.isEmail(val)) {
-    return "email felid";
+    return "3".tr;
   }
   if (isPhone && !GetUtils.isPhoneNumber(val)) {
-    return "phone felid";
+    return "4".tr;
   }
   if (isNumber && !GetUtils.isNumericOnly(val)) {
-    return "entry number";
+    return "5".tr;
   }
   if (isDateTime && !GetUtils.isDateTime(val)) {
-    return "entry date time only";
+    return "8".tr;
   }
 
   if (min != 0 && val.length < min) {
-    return "min is true";
+    return "6".tr;
   }
 
   if (max != 0 && val.length > max) {
-    return "min is true";
+    return "7".tr;
   }
 }

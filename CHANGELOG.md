@@ -21,3 +21,6 @@ add onchange function to search input
 
 ## 1.0.4
 dart format all file
+
+## 1.0.5
+Add Custom Slidable
