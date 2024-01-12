@@ -24,3 +24,6 @@ dart format all file
 
 ## 1.0.5
 Add Custom Slidable
+
+## 1.0.6
+Update Custom Slidable

@@ -10,8 +10,7 @@ class CustomLoading extends StatelessWidget {
       height: Dimensions.screenHeight,
       width: Dimensions.screenWidth,
       padding: EdgeInsets.all(Dimensions.height20),
-      decoration: BoxDecoration(
-          color: Colors.black.withOpacity(0.2)),
+      decoration: BoxDecoration(color: Colors.black.withOpacity(0.2)),
       child: const Center(
           child: Image(
         image: AssetImage("assets/images/loading.gif"),
