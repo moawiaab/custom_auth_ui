@@ -2,8 +2,9 @@ import 'package:custom_auth_ui/src/core/status_require.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
+// ignore: must_be_immutable
 class CustomSlidable extends StatelessWidget {
-  const CustomSlidable({
+  CustomSlidable({
     super.key,
     required this.onPressed,
     required this.child,
@@ -14,6 +15,8 @@ class CustomSlidable extends StatelessWidget {
     this.deletable = true,
     this.shearing = false,
     this.adding = false,
+    this.defaultLeft = false,
+    this.icon = Icons.shopping_cart_checkout,
   });
 
   final void Function(SlidableButtonType type) onPressed;
@@ -25,6 +28,8 @@ class CustomSlidable extends StatelessWidget {
   final bool? deletable;
   final bool? shearing;
   final bool? adding;
+  IconData icon;
+  final bool? defaultLeft;
 
   @override
   Widget build(BuildContext context) {
@@ -91,6 +96,15 @@ class CustomSlidable extends StatelessWidget {
                   icon: toggle!
                       ? Icons.toggle_on_outlined
                       : Icons.toggle_off_outlined,
+                  // label: 'Archive',
+                )
+              : Container(),
+          defaultLeft!
+              ? SlidableAction(
+                  onPressed: (context) => onPressed(SlidableButtonType.save),
+                  backgroundColor: const Color(0xFF4FA806).withOpacity(0.1),
+                  foregroundColor: const Color(0xFF4FA806),
+                  icon: icon,
                   // label: 'Archive',
                 )
               : Container(),
