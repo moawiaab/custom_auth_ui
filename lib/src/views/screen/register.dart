@@ -37,6 +37,18 @@ class RegisterPage extends StatelessWidget {
                 ),
                 const Divider(),
                 CustomTextInput(
+                  hintText: "اسم الموقع",
+                  icon: Icons.person,
+                  controller: controller.accountController,
+                  valid: (val) => validInput(val!, isRequire: true, min: 5),
+                ),
+                CustomTextInput(
+                  hintText: "details".tr,
+                  icon: Icons.text_fields_sharp,
+                  controller: controller.detailsController,
+                  valid: (val) => validInput(val!, isRequire: true, min: 5),
+                ),
+                CustomTextInput(
                   hintText: "20".tr,
                   icon: Icons.person,
                   controller: controller.nameController,

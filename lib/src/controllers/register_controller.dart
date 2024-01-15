@@ -20,6 +20,8 @@ class RegisterController extends RegisterControllerAbs {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController phoneController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  final TextEditingController detailsController = TextEditingController();
+  final TextEditingController accountController = TextEditingController();
 
   bool showPassword = true;
 
@@ -38,6 +40,9 @@ class RegisterController extends RegisterControllerAbs {
           email: emailController.text,
           password: passwordController.text,
           deviceName: deviceName,
+          account : accountController.text,
+          details : detailsController.text
+
         )));
 
         if (response.statusCode == 200) {
