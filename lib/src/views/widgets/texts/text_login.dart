@@ -16,12 +16,12 @@ class CustomLoginText extends StatelessWidget {
       child: Row(
         children: [
           BigText(
-              text: text, textColor: Colors.grey, size: Dimensions.fontSize18),
+              text: text, textColor: Colors.grey, size: Dimensions.fontSize14),
           InkWell(
             onTap: onTap,
             child: BigText(
               text: text2,
-              size: Dimensions.fontSize16,
+              size: Dimensions.fontSize12,
               textColor: Theme.of(context).primaryColor,
             ),
           )

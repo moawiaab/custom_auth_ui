@@ -27,3 +27,7 @@ Add Custom Slidable
 
 ## 1.0.6
 Update Custom Slidable
+
+
+## 2.0.0
+Update login page
