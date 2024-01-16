@@ -14,7 +14,7 @@ TableRow tableRowFour(
           horizontal: Dimensions.height10),
       child: CustomBigText(
         text: c1,
-        size: Dimensions.fontSize14,
+        size: Dimensions.fontSize12,
         textColor: header ? Colors.red : Colors.black87,
       ),
     ),
@@ -24,7 +24,7 @@ TableRow tableRowFour(
           horizontal: Dimensions.height10),
       child: CustomBigText(
         text: c2,
-        size: Dimensions.fontSize14,
+        size: Dimensions.fontSize12,
         textColor: header ? Colors.red : Colors.black87,
       ),
     ),
@@ -34,7 +34,7 @@ TableRow tableRowFour(
           horizontal: Dimensions.height10),
       child: CustomBigText(
         text: c3,
-        size: Dimensions.fontSize14,
+        size: Dimensions.fontSize12,
         textColor: header ? Colors.red : Colors.black87,
       ),
     ),
@@ -44,7 +44,7 @@ TableRow tableRowFour(
           horizontal: Dimensions.height10),
       child: CustomBigText(
         text: c4,
-        size: Dimensions.fontSize14,
+        size: Dimensions.fontSize12,
         textColor: header ? Colors.red : Colors.black87,
       ),
     ),

@@ -52,11 +52,13 @@ class CustomTextInput extends StatelessWidget {
         keyboardType: keyboardType,
         controller: controller,
         autofocus: autofocus!,
+        
         validator: valid,
         onChanged: onChanged,
         enabled: enabled,
         obscureText: password!,
         decoration: InputDecoration(
+          
           hintText: hintText,
           border: InputBorder.none,
           icon: InkWell(

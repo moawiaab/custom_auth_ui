@@ -27,7 +27,7 @@ class CustomBigText extends StatelessWidget {
       maxLines: maxLine! ? 1 : null,
       overflow: maxLine! ? TextOverflow.ellipsis : TextOverflow.clip,
       style: TextStyle(
-          fontSize: size ?? Dimensions.fontSize20,
+          fontSize: size ?? Dimensions.fontSize18,
           fontWeight: fontWeight! ? FontWeight.bold : FontWeight.normal,
           color: textColor,
           height: height),
