@@ -66,8 +66,8 @@ class LoginController extends LoginControllerAbs {
 
   @override
   void onInit() {
-    emailController.text = "admin@admin.com";
-    passwordController.text = "password";
+    // emailController.text = "admin@admin.com";
+    // passwordController.text = "password";
     super.onInit();
   }
 

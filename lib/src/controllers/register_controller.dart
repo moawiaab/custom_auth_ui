@@ -77,8 +77,8 @@ class RegisterController extends RegisterControllerAbs {
 
   @override
   void onInit() {
-    emailController.text = "admin@admin.com";
-    passwordController.text = "password";
+    // emailController.text = "admin@admin.com";
+    // passwordController.text = "password";
     super.onInit();
   }
 

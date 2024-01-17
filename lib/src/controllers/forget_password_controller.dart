@@ -47,7 +47,7 @@ class ForgetPasswordController extends ForgetPasswordControllerAbs {
 
   @override
   void onInit() {
-    emailController.text = "admin@admin.com";
+    // emailController.text = "admin@admin.com";
     super.onInit();
   }
 
